@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from core.views import homepage
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', homepage),
@@ -24,7 +25,7 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
 
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     import debug_toolbar
