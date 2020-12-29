@@ -18,11 +18,16 @@ from django.conf import settings
 from django.urls import include, path
 from core.views import homepage
 from django.conf.urls.static import static
+from core import views
 
 urlpatterns = [
     path('', homepage),
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
+
+    #Collection urls paths
+    path('core/add_collection/', views.add_collection, name='add_collection'),
+
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

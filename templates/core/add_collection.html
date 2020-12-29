@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>Upload your note to make a collection</p>
+
+<form action="{% url 'add_collection' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <button type="submit">add to a collection</button>
+        </div>
+    </form>
+
+
+{% endblock %}

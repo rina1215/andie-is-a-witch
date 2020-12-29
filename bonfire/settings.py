@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     # Third-party
     'debug_toolbar',
     'django_extensions',
-    'imagekit'
+
 
     # Project-specific
     'core',
