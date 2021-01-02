@@ -18,7 +18,9 @@ class NoteForm(forms.ModelForm):
         model = Note
         fields = [
             'note_by',
+            'title',
             'note',
+            'collection_of_notes',
             
 
         ]

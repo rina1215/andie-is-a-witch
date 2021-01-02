@@ -32,12 +32,12 @@ def add_note (request):
         form = NoteForm(request.POST, files=request.FILES)
         if form. is_valid():
             note = form.save(commit=False)
-            print(note.collection)
+            # print(note.collection)
             note.save()
             return redirect (to='homepage', collection_pk=note.collection.pk)
     return render (request, 'core/add_note.html', {'form':form})
 
-    # def list_note (request, collection_pk):
-    #     collection = get_object_or_404(Collection, pk=collection_pk)
-    # return render(request, 'core/list_note.html', {'collection': collection, 'pk':collection_pk})
-    
+    def list_note (request, collection_pk):
+        collection = get_object_or_404(Collection, pk=collection_pk)
+    return render(request, 'core/list_note.html', {'collection': collection, 'pk':collection_pk})
+
