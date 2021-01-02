@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+{% for note in collection.note.all %}
+
+<p><h3>{{ user.username }},</h3>here are your notes</p>
+
+
+{% endfor %}
+
+{% endblock %}

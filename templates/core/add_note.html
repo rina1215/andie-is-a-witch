@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p> {{ user.username }} upload your notes </p><br></br>
+
+<form action="{% url 'add_note' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <button type="submit">upload</button>
+        </div>
+    </form>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

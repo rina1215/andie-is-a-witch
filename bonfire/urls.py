@@ -27,6 +27,12 @@ urlpatterns = [
 
     #Collection urls paths
     path('core/add_collection/', views.add_collection, name='add_collection'),
+    path('core/list_collection/', views.list_collection, name='list_collection'),
+
+    #Note urls paths
+    path('core/add_note/', views.add_note, name='add_note'),
+    # path('core/list_note/<int:collection_pk>/', views.list_note, name='list_note'),
+
 
 
 

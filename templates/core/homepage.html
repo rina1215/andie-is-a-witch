@@ -1,8 +1,10 @@
 {% extends "base.html" %}
+{% load  static %}
 
 {% block content %}
 {% if user.is_authenticated %}
-        <p>Hello {{ user.username }}</p>
+<div class="hero-text">
+        <h1>Welcome, {{ user.username }}</h1>
         <p><a href="{% url 'auth_logout' %}">Log out</a></p>
     {% else %}
         <p>
@@ -12,3 +14,6 @@
         </p>
     {% endif %}
 {% endblock %}
+
+
+
