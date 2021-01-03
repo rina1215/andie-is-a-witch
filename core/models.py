@@ -30,7 +30,7 @@ class Note(models.Model):
     date_added = models.DateField(auto_now_add=True)
     date_updated = models.DateField(auto_now=True)
     public_note = models.BooleanField(default=True)
-    collection_of_notes = models.ForeignKey(to=Collection, on_delete = models.CASCADE, related_name='collections_of_notes', null=True, blank=True) 
+    collection_of_notes = models.ForeignKey(to=Collection, on_delete = models.CASCADE, related_name='collections', null=True, blank=True) 
 
 
 
