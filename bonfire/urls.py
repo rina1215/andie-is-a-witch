@@ -18,6 +18,7 @@ from django.conf import settings
 from django.urls import include, path
 from core.views import homepage
 from django.conf.urls.static import static
+
 from core import views
 
 urlpatterns = [

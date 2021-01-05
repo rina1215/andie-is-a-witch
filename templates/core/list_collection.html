@@ -1,9 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <p>Hello {{ user.username }}</p>
 
+<div class="main">
+{% for collection in note_image %}
 
+<p><a href="{% url 'list_collection' collection.pk %}"><img src='/media/{{ collection.note_image.url}} 'alt="collection" style="width:100%"></a></p>
 
-
-
+        {% empty %}
+        {% endfor %}
+    </div>
 {% endblock %}
+
+

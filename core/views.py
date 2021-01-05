@@ -23,8 +23,8 @@ def add_collection(request):
     return render(request, "core/add_collection.html", {'form':form})
 
 def list_collection (request):
-    collections = Collection.objects.all()
-    response = render(request, 'core/list_collection.html', {'collections': collections})
+    collection = Collection.objects.all()
+    response = render(request, 'core/list_collection.html', {'collection': collection})
     return response
 
 def add_note (request):

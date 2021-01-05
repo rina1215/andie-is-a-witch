@@ -3,6 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from imagekit.processors import ResizeToFit, ResizeToFill
 from imagekit.models import ImageSpecField
 from django.utils import timezone
+from django.conf import settings
 
 
 class User(AbstractUser):
@@ -17,6 +18,8 @@ class Collection (models.Model):
     date_updated = models.DateField(auto_now=True)
     public_collection = models.BooleanField(default=True)
     note_image = models.ImageField(upload_to='collection', null=True)
+    note_image_thumb = ImageSpecField(source="note_image", processors=[ResizeToFill(200,200)], format="JPEG", options={'quality': 80})
+    note_image_large = ImageSpecField(source="note_image", processors=[ResizeToFit(600,600)], format="JPEG", options={"quality": 90})
 
     def __str__(self):
         return f'{self.title}'
